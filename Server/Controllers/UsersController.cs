@@ -6,7 +6,6 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Repository.Models;
@@ -26,9 +25,9 @@ namespace Server.Controllers
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> GetUser(int id)
+        public IHttpActionResult GetUser(int id)
         {
-            User user = await db.Users.FindAsync(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -39,7 +38,7 @@ namespace Server.Controllers
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutUser(int id, User user)
+        public IHttpActionResult PutUser(int id, User user)
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +54,7 @@ namespace Server.Controllers
 
             try
             {
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -74,7 +73,7 @@ namespace Server.Controllers
 
         // POST: api/Users
         [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> PostUser(User user)
+        public IHttpActionResult PostUser(User user)
         {
             if (!ModelState.IsValid)
             {
@@ -82,23 +81,23 @@ namespace Server.Controllers
             }
 
             db.Users.Add(user);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = user.ID }, user);
         }
 
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> DeleteUser(int id)
+        public IHttpActionResult DeleteUser(int id)
         {
-            User user = await db.Users.FindAsync(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
             }
 
             db.Users.Remove(user);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
             return Ok(user);
         }
