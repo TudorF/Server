@@ -10,16 +10,22 @@ namespace Server.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Server.Models.ServerContext context)
         {
 
-            context.Clients.AddOrUpdate(x => x.Id,
-        new Client() { Id = 1, Name = "Jane Austen" ,Password="clock"},
-        new Client() { Id = 2, Name = "Charles Dickens", Password="clock1" },
-        new Client() { Id = 3, Name = "Miguel de Cervantes", Password = "clock1" }
+            context.Users.AddOrUpdate(x => x.ID,
+        new User() { ID = 1, Name = "Jane Austen" ,Password="clock"},
+        new User() { ID = 2, Name = "Charles Dickens", Password="clock1" },
+        new User() { ID = 3, Name = "Miguel de Cervantes", Password = "clock1" }
+        );
+
+            context.Fields.AddOrUpdate(x => x.Id,
+        new Field() { Id = 11, Name = "ClujArena", Location = "clock" }
+        
         );
             //  This method will be called after migrating to the latest version.
 

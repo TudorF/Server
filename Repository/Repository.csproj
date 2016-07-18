@@ -53,14 +53,18 @@
     <Compile Include="ClientRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\ClientContext.cs" />
     <Compile Include="Models\FacilityContext.cs" />
     <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

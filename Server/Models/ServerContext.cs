@@ -20,6 +20,8 @@ namespace Server.Models
             this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
-        public System.Data.Entity.DbSet<Repository.Models.Client> Clients { get; set; }
+        public System.Data.Entity.DbSet<Repository.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<Repository.Models.Field> Fields { get; set; }
+
     }
 }

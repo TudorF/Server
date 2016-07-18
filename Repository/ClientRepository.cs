@@ -7,58 +7,58 @@ using Repository.Models;
 
 namespace Repository
 {
-    class ClientRepository:IRepository<Client>,IDisposable
-    {
-        private ClientContext context;
-        ClientRepository(ClientContext context)
-        {
-            this.context = context;
-        }
+    //class ClientRepository:IRepository<Client>,IDisposable
+    //{
+    //    private ClientContext context;
+    //    ClientRepository(ClientContext context)
+    //    {
+    //        this.context = context;
+    //    }
         
 
        
-        public IEnumerable<Client> GetAll()
-        {
-            return context.Clients.ToList();
-        }
+    //    public IEnumerable<Client> GetAll()
+    //    {
+    //        return context.Clients.ToList();
+    //    }
 
-        public Client GetClient(int id)
-        {
-            return context.Clients.Find(id);
-        }
+    //    public Client GetClient(int id)
+    //    {
+    //        return context.Clients.Find(id);
+    //    }
 
-        public void Add(Client client)
-        {
-            context.Clients.Add(client);
-        }
-
-       
+    //    public void Add(Client client)
+    //    {
+    //        context.Clients.Add(client);
+    //    }
 
        
-        public void Save()
-        {
-            context.SaveChanges();
-        }
 
-        private bool disposed = false;
+       
+    //    public void Save()
+    //    {
+    //        context.SaveChanges();
+    //    }
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
-            {
-                if (disposing)
-                {
-                    context.Dispose();
-                }
-            }
-            this.disposed = true;
-        }
+    //    private bool disposed = false;
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-    }
+    //    protected virtual void Dispose(bool disposing)
+    //    {
+    //        if (!this.disposed)
+    //        {
+    //            if (disposing)
+    //            {
+    //                context.Dispose();
+    //            }
+    //        }
+    //        this.disposed = true;
+    //    }
+
+    //    public void Dispose()
+    //    {
+    //        Dispose(true);
+    //        GC.SuppressFinalize(this);
+    //    }
+    //}
 }
 

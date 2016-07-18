@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Repository.Models
 {
-    public class Field
+    public class User
     {
-        public int Id { get; set; }
+
+        public int ID { get; set; }
         public String Name { get; set; }
-        public String Location { get; set; }
+        public String Password { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }
+
     }
 }

@@ -14,107 +14,107 @@ using Server.Models;
 
 namespace Server.Controllers
 {
-    public class ClientsController : ApiController
-    {
-        private ServerContext db = new ServerContext();
+    //public class ClientsController : ApiController
+    //{
+    //    private ServerContext db = new ServerContext();
 
-        // GET: api/Clients
-        public IQueryable<Client> GetClients()
-        {
-            return db.Clients;
-        }
+    //    // GET: api/Clients
+    //    public IQueryable<Client> GetClients()
+    //    {
+    //        return db.Clients;
+    //    }
 
-        // GET: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> GetClient(int id)
-        {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
-            {
-                return NotFound();
-            }
+    //    // GET: api/Clients/5
+    //    [ResponseType(typeof(Client))]
+    //    public async Task<IHttpActionResult> GetClient(int id)
+    //    {
+    //        Client client = await db.Clients.FindAsync(id);
+    //        if (client == null)
+    //        {
+    //            return NotFound();
+    //        }
 
-            return Ok(client);
-        }
+    //        return Ok(client);
+    //    }
 
-        // PUT: api/Clients/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutClient(int id, Client client)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+    //    // PUT: api/Clients/5
+    //    [ResponseType(typeof(void))]
+    //    public async Task<IHttpActionResult> PutClient(int id, Client client)
+    //    {
+    //        if (!ModelState.IsValid)
+    //        {
+    //            return BadRequest(ModelState);
+    //        }
 
-            if (id != client.Id)
-            {
-                return BadRequest();
-            }
+    //        if (id != client.Id)
+    //        {
+    //            return BadRequest();
+    //        }
 
-            db.Entry(client).State = EntityState.Modified;
+    //        db.Entry(client).State = EntityState.Modified;
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ClientExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+    //        try
+    //        {
+    //            await db.SaveChangesAsync();
+    //        }
+    //        catch (DbUpdateConcurrencyException)
+    //        {
+    //            if (!ClientExists(id))
+    //            {
+    //                return NotFound();
+    //            }
+    //            else
+    //            {
+    //                throw;
+    //            }
+    //        }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+    //        return StatusCode(HttpStatusCode.NoContent);
+    //    }
 
-        // POST: api/Clients
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> PostClient(Client client)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+    //    // POST: api/Clients
+    //    [ResponseType(typeof(Client))]
+    //    public async Task<IHttpActionResult> PostClient(Client client)
+    //    {
+    //        if (!ModelState.IsValid)
+    //        {
+    //            return BadRequest(ModelState);
+    //        }
 
-            db.Clients.Add(client);
-            await db.SaveChangesAsync();
+    //        db.Clients.Add(client);
+    //        await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
-        }
+    //        return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
+    //    }
 
-        // DELETE: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> DeleteClient(int id)
-        {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
-            {
-                return NotFound();
-            }
+    //    // DELETE: api/Clients/5
+    //    [ResponseType(typeof(Client))]
+    //    public async Task<IHttpActionResult> DeleteClient(int id)
+    //    {
+    //        Client client = await db.Clients.FindAsync(id);
+    //        if (client == null)
+    //        {
+    //            return NotFound();
+    //        }
 
-            db.Clients.Remove(client);
-            await db.SaveChangesAsync();
+    //        db.Clients.Remove(client);
+    //        await db.SaveChangesAsync();
 
-            return Ok(client);
-        }
+    //        return Ok(client);
+    //    }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    //    protected override void Dispose(bool disposing)
+    //    {
+    //        if (disposing)
+    //        {
+    //            db.Dispose();
+    //        }
+    //        base.Dispose(disposing);
+    //    }
 
-        private bool ClientExists(int id)
-        {
-            return db.Clients.Count(e => e.Id == id) > 0;
-        }
-    }
+    //    private bool ClientExists(int id)
+    //    {
+    //        return db.Clients.Count(e => e.Id == id) > 0;
+    //    }
+    //}
 }
