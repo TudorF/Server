@@ -10,8 +10,8 @@ namespace Server.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
+            //AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Server.Models.ServerContext context)
@@ -22,11 +22,15 @@ namespace Server.Migrations
         new User() { ID = 2, Name = "Charles Dickens", Password="clock1" },
         new User() { ID = 3, Name = "Miguel de Cervantes", Password = "clock1" }
         );
+             
+            context.SaveChanges();
 
             context.Fields.AddOrUpdate(x => x.Id,
         new Field() { Id = 11, Name = "ClujArena", Location = "clock" }
         
         );
+
+            context.SaveChanges();
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

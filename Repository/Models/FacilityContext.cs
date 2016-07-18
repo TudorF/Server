@@ -11,7 +11,7 @@ namespace Repository.Models
     {
         public FacilityContext() : base("FacilityContext")
         {}
-            public DbSet<Client> Users { get; set; }
+            public DbSet<User> Users { get; set; }
             public DbSet<Field> Fields { get; set; }
             public DbSet<Reservation> Reservations { get; set; }
     }

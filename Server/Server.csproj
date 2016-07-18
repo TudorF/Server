@@ -141,12 +141,17 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201607180154315_Initial.cs" />
     <Compile Include="Migrations\201607180154315_Initial.Designer.cs">
       <DependentUpon>201607180154315_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182144572_AddURF.cs" />
+    <Compile Include="Migrations\201607182144572_AddURF.Designer.cs">
+      <DependentUpon>201607182144572_AddURF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ServerContext.cs" />
@@ -164,6 +169,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607180154315_Initial.resx">
       <DependentUpon>201607180154315_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182144572_AddURF.resx">
+      <DependentUpon>201607182144572_AddURF.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

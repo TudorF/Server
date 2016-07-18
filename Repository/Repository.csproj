@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="ClientRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\FacilityContext.cs" />
     <Compile Include="Models\Field.cs" />
     <Compile Include="Models\Reservation.cs" />

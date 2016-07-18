@@ -22,6 +22,6 @@ namespace Server.Models
 
         public System.Data.Entity.DbSet<Repository.Models.User> Users { get; set; }
         public System.Data.Entity.DbSet<Repository.Models.Field> Fields { get; set; }
-
+        public System.Data.Entity.DbSet<Repository.Models.Reservation> Reservations { get; set; }
     }
 }
