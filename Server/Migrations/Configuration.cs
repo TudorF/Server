@@ -10,7 +10,8 @@ namespace Server.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             //AutomaticMigrationDataLossAllowed = true;
         }
 
@@ -25,12 +26,12 @@ namespace Server.Migrations
              
             context.SaveChanges();
 
-            context.Fields.AddOrUpdate(x => x.Id,
-        new Field() { Id = 11, Name = "ClujArena", Location = "clock" }
+        //    context.Fields.AddOrUpdate(x => x.Id,
+        //new Field() { Id = 11, Name = "ClujArena", Location = "clock" }
         
-        );
+        //);
 
-            context.SaveChanges();
+        //    context.SaveChanges();
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

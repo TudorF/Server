@@ -18,9 +18,9 @@ namespace Server.Controllers
         private ServerContext db = new ServerContext();
 
         // GET: api/Users
-        public IQueryable<User> GetUsers()
+        public IEnumerable<User> GetUsers()
         {
-            return db.Users;
+            return db.Users.ToArray();
         }
 
         // GET: api/Users/5

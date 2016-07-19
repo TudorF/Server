@@ -13,6 +13,8 @@ namespace Repository.Models
         public String Name { get; set; }
         public String Password { get; set; }
 
+        public String Status { get; set; }
+
         public virtual ICollection<Reservation> Reservations { get; set; }
 
     }

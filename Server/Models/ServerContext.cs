@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Server.Migrations;
 
 namespace Server.Models
 {
@@ -17,7 +18,8 @@ namespace Server.Models
     
         public ServerContext() : base("name=ServerContext")
         {
-            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+            //this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ServerContext, Configuration>());
         }
 
         public System.Data.Entity.DbSet<Repository.Models.User> Users { get; set; }
